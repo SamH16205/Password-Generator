@@ -58,6 +58,8 @@ function promptUser(){
     specChar.push(special)
   }
   userInput.push(specChar)
+  console.log(userInput)
+  writePassword()
 }
 
 function generatePassword(param){
@@ -65,19 +67,22 @@ function generatePassword(param){
 var pWord = ''
 var len = param[0]
 var symbols = param[1]
+
+// randomly chooses what typeof character to use and then randomly chooses what character specifically to use
 for(var i=0; i<len; i++){
   var randSymbolRange= symbols[Math.floor(Math.random()*symbols.length)]
   var randSymbol = randSymbolRange[Math.floor(Math.random()*randSymbolRange.length)]
   pWord += String.fromCharCode(randSymbol)
 }
 return pWord
+console.log(pWord)
 }
 
 
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword(userInput);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
