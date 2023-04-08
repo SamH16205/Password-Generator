@@ -51,6 +51,42 @@ for(var i=0; i<len; i++){
 return pWord
 }
 
+function checkLower(word){
+  word = word.split("")
+  for (const x of word) {
+    if (lowercase.includes(x)){
+      return true
+    }
+  }
+}
+
+function checkUpper(word){
+  word = word.split("")
+  for (const x of word) {
+    if (uppercase.includes(x)){
+      return true
+    }
+  }
+}
+
+function checkNumber(word){
+  word = word.split("")
+  for (const x of word) {
+    if (numbers.includes(x)){
+      return true
+    }
+  }
+}
+
+function checkSpecial(word){
+  word = word.split("")
+  for (const x of word) {
+    if (special.includes(x)){
+      return true
+    }
+  }
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
